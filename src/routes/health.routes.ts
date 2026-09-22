@@ -1,14 +1,7 @@
 import { Router } from "express";
-
+import { healthController } from "../controller/health.controller";
 const router = Router();
 
-router.get("/health", (_req, res) => {
-  res.json({
-    message: "Health endpoint",
-    status: "ok",
-    uptime: 12345.67,
-    timestamp: new Date().toISOString(),
-  });
-});
+router.get("/health", healthController);
 
 export default router;

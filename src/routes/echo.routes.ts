@@ -1,12 +1,7 @@
 import { Router } from "express";
-
+import { echoController } from "../controller/echo.controller";
 const router = Router();
 
-router.post("/echo", (req, res) => {
-    res.json({
-        message: "Echo endpoint",
-        data: req.body,
-    });
-});
+router.get("/health", echoController);
 
 export default router;

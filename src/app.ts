@@ -10,10 +10,10 @@ app.use(express.json());
 app.use("/api", healthRoutes);
 app.use("/api", echoRoutes);
 app.use((req: Request, res: Response) => {
-    res.status(404).json({
-        success: false,
-        message: `Route not found ${req}`,
-    });
+  res.status(404).json({
+    success: false,
+    message: `Route not found ${req}`,
+  });
 });
 
 export default app;
