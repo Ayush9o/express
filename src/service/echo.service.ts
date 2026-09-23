@@ -1,4 +1,3 @@
-import { env } from "../config/env";
 export interface echo {
   message: string;
   data: string;
