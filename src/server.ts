@@ -1,8 +1,19 @@
 import app from "./app";
+import { User } from "./model/User.model";
+import "dotenv/config";
+import { connectedDB } from "./config/db";
+import { env } from "./config/env";
 
-const PORT = Number(process.env.PORT) || 5000;
-const NODE_ENV = process.env.NODE_ENV || "development";
+async function Start(): Promise<void> {
+  try {
+    await connectedDB();
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT} (${NODE_ENV})`);
-});
+    app.listen(env.port, () => {
+      console.log(`Server is running on http://localhost:)`);
+    });
+  } catch (error) {
+    console.error("Server startup failed:", error);
+  }
+}
+
+void Start();
